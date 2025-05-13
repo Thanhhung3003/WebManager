@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notice Popup</title>
+    <link rel="stylesheet" href="/css/noticeStyles.css" />
+  </head>
+  <body>
+    <dialog id="noticeDialog">
+      <p id="message"></p>
+      <p id="route" style="display: none"></p>
+      <button onclick="closePopup()" class="dialog-button">Close</button>
+    </dialog>
+
+    <script>
+      // Function to display the popup with a message
+      function showPopup(message, route) {
+        const dialog = document.getElementById("noticeDialog");
+        document.getElementById("message").textContent = message;
+        document.getElementById("route").textContent = route;
+        if (typeof dialog.showModal === "function") {
+          dialog.showModal();
+        } else {
+          alert("Your browser does not support <dialog> element.");
+        }
+      }
+
+      // Function to close the popup
+      function closePopup() {
+        const dialog = document.getElementById("noticeDialog");
+        const route = document.getElementById("route").textContent;
+        dialog.close();
+        if (route) {
+          window.location.href = route;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const message = "<%= message %>";
+        const route = "<%= route %>";
+        if (message) showPopup(message, route);
+      });
+    </script>
+  </body>
+</html>

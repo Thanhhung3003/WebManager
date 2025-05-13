@@ -1,0 +1,19 @@
+body {
+  background: #f8f9fa;
+}
+.register-form {
+  max-width: 450px;
+  margin: 5% auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.form-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+.form-footer a {
+  text-decoration: none;
+  color: #0d6efd;
+}
