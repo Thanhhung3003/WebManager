@@ -5,7 +5,7 @@ const serviceAccount = require("./serviceAccountKey.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://android12-9ff98-default-rtdb.firebaseio.com/", // Replace with your actual database URL
+  databaseURL: "https://spendingbook-5acaa-default-rtdb.firebaseio.com/", // Replace with your actual database URL
 });
 
 const fireStore = admin.firestore();

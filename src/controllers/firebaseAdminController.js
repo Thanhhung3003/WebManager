@@ -84,16 +84,6 @@ async function deleteUserByEmail(email) {
   }
 }
 
-async function updateUserByEmail(email, newData) {
-  try {
-    const userRecord = await auth.getUserByEmail(email);
-    await auth.updateUser(userRecord.uid, newData);
-    console.log("Successfully updated user");
-  } catch (error) {
-    console.error("Error updating user:", error);
-  }
-}
-
 async function getUserById(id) {
   try {
     const userRecord = await auth.getUser(id);
@@ -135,7 +125,6 @@ module.exports = {
   loadUserByEmail,
   loadUsers,
   deleteUserByEmail,
-  updateUserByEmail,
   getUserById,
   getDataById,
   verifyIdToken,
